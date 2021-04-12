@@ -1,6 +1,6 @@
-=========
-API LUCAS
-=========
+===========
+API FINANCE
+===========
 
 .. .. image:: http://url_jenkins/badge/icon
 ..         :target: http://url_jenkins

@@ -51,7 +51,7 @@ with open(os.path.join('api', 'version.py'), 'rt') as fp:
     version = g['__version__']
 
 setup(
-    name='api-worker-finance',
+    name='api_finance',
     version=version,
     long_description=readme,
     author='Beto Noronha',
@@ -66,7 +66,7 @@ setup(
     tests_require=tests_require,
     entry_points={
         'console_scripts': [
-            'worker-finance = api.cli:cli'
+            'api-finance = api.cli:cli'
         ]
     }
 )
