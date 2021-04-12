@@ -45,7 +45,7 @@ install_requires = [
 
 packages = find_packages()
 
-with open(os.path.join('api', 'version.py'), 'rt') as fp:
+with open(os.path.join('api_finance', 'version.py'), 'rt') as fp:
     g = {}
     exec(fp.read(), g)
     version = g['__version__']
