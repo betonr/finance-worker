@@ -1,6 +1,6 @@
 import pytest
 
-from api import create_app
+from api_finance import create_app
 
 
 @pytest.fixture(scope='module')

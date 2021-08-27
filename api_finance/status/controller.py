@@ -1,7 +1,7 @@
-from api.utils.flask import APIResource
+from api_finance.utils.flask import APIResource
 
-from api import __version__
-from api.status import ns
+from api_finance import __version__
+from api_finance.status import ns
 
 api = ns
 

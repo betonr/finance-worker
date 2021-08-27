@@ -5,8 +5,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 from bs4 import BeautifulSoup
 
-from api.config import Config
-from api.utils.worker import get_info_by_table
+from api_finance.config import Config
+from api_finance.utils.worker import get_info_by_table
 
 class FundamentusServices():
 

@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey, Float, DateTime
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship
 
-from api.utils.base_sql import BaseModel
+from api_finance.utils.base_sql import BaseModel
 
 
 class Balance(BaseModel):

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, DateTime, Float, ForeignKey
 from sqlalchemy.orm import relationship
 
-from api.utils.base_sql import BaseModel
+from api_finance.utils.base_sql import BaseModel
 
 
 class Indicators(BaseModel):

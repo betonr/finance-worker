@@ -25,15 +25,15 @@ def create_app(config_name='DevelopmentConfig'):
 
     with app.app_context():
         CORS(app, resources={r"/*": {"origins": "*"}})
-        _ = Redoc('./spec/openapi.yaml', app)
+        _ = Redoc('./spec/openapi_finance.yaml', app)
 
         # DB
-        from api.models import db
+        from api_finance.models import db
         db.init_app(app)
         Migrate(app, db)
 
         # Setup blueprint
-        from api.blueprint import bp
+        from api_finance.blueprint import bp
         app.register_blueprint(bp)
 
     return app

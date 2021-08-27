@@ -15,7 +15,7 @@ def create_cli():
 
     @click.group(cls=FlaskGroup, create_app=create_cli_app)
     def cli(**params):
-        """Command line interface for api."""
+        """Command line interface for api_finance."""
         pass
 
     return cli

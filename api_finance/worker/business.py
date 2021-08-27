@@ -6,10 +6,10 @@ import tempfile
 import zipfile
 import pandas as pd
 
-from api.models import db, Action, Worker, Indicators, Balance, Quotas
-from api.utils.base_sql import BaseModel, db
-from api.utils.helpers import working_directory
-from api.worker.services import FundamentusServices
+from api_finance.models import db, Action, Worker, Indicators, Balance, Quotas
+from api_finance.utils.base_sql import BaseModel, db
+from api_finance.utils.helpers import working_directory
+from api_finance.worker.services import FundamentusServices
 
 class WorkerBusiness():
 
@@ -82,24 +82,25 @@ class WorkerBusiness():
             action_id = action.id
             try:
                 indicators_by_action = FundamentusServices.get_indicators(action_id)
-                update = indicators_by_action.get('date')
+                update = True
 
-                # verify if exist in db and your date is equals
-                for indicator_db in indicators_db:
-                    if indicator_db.action_id == action_id:
-                        if(indicator_db.date == indicators_by_action['date']):
-                            update = False
+                if indicators_by_action.get('date'):
+                    # verify if exist in db and your date is equals
+                    for indicator_db in indicators_db:
+                        if indicator_db.action_id == action_id:
+                            if(indicator_db.date == indicators_by_action['date']):
+                                update = False
+                                break
+                            indicator_db.deleted_at = datetime.now()
+                            db.session.commit()
                             break
-                        indicator_db.deleted_at = datetime.now()
-                        db.session.commit()
-                        break
 
-                if update:
-                    activity.qnt_update_indicators += 1
-                    new_indicators.append(Indicators(
-                        action_id=action_id,
-                        **indicators_by_action
-                    ))
+                    if update:
+                        activity.qnt_update_indicators += 1
+                        new_indicators.append(Indicators(
+                            action_id=action_id,
+                            **indicators_by_action
+                        ))
 
             except Exception as e:
                 activity.actions_errors = '{},{}'.format(activity.actions_errors, action_id)
@@ -212,7 +213,7 @@ class WorkerBusiness():
                 quotas = []
                 if historic_quota:
                     if only_last_quota:
-                        historic_quota = historic_quota[-1]
+                        historic_quota = historic_quota[-2:]
 
                     for quota in historic_quota:
                         date = (datetime.fromtimestamp(quota[0] / 1e3) + timedelta(hours=3)).replace(minute=0, hour=0, second=0)

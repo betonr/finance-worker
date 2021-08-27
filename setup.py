@@ -66,7 +66,7 @@ setup(
     tests_require=tests_require,
     entry_points={
         'console_scripts': [
-            'api-finance = api.cli:cli'
+            'api-finance = api_finance.cli:cli'
         ]
     }
 )

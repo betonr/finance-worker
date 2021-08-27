@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
-from api.utils.base_sql import BaseModel
+from api_finance.utils.base_sql import BaseModel
 
 
 class Quotas(BaseModel):

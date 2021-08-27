@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Integer, DateTime, Boolean
 
-from api.utils.base_sql import BaseModel
+from api_finance.utils.base_sql import BaseModel
 
 
 class Worker(BaseModel):

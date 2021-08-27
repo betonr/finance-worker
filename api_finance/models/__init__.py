@@ -1,4 +1,4 @@
-from api.utils.base_sql import db
+from api_finance.utils.base_sql import db
 from .action import Action
 from .balance import Balance
 from .indicators import Indicators

@@ -3,7 +3,7 @@ validation of worker controllers schemas
 """
 
 from cerberus import Validator
-from api.utils.validators import to_date
+from api_finance.utils.validators import to_date
 
 def download_balance():
     return {

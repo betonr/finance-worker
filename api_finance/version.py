@@ -1,5 +1,5 @@
-"""Version information for API.
-This file is imported by ``api.__init__``,
+"""Version information for api_finance.
+This file is imported by ``api_finance.__init__``,
 and parsed by ``setup.py``.
 """
 

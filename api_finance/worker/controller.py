@@ -1,11 +1,11 @@
 import json
 from flask import request
-from api.utils.flask import APIResource
+from api_finance.utils.flask import APIResource
 from werkzeug.exceptions import BadRequest
 
-from api.worker import ns
-from api.worker.business import WorkerBusiness
-from api.worker.validators import validate
+from api_finance.worker import ns
+from api_finance.worker.business import WorkerBusiness
+from api_finance.worker.validators import validate
 
 api = ns
 
