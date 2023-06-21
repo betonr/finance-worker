@@ -12,7 +12,7 @@ Go to the source code folder:
 
 .. code-block:: shell
 
-        $ cd api
+        $ cd worker-finance
 
 
 Install in development mode:
