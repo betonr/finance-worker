@@ -12,7 +12,7 @@ Go to the source code folder:
 
 .. code-block:: shell
 
-        $ cd api-lucas
+        $ cd api
 
 
 Install in development mode:
